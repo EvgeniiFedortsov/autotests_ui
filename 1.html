@@ -62,7 +62,12 @@
   }
   ul.custom li { color: #0a8b3d; }
   ul.redbullets { color:#c00000; margin-left:18px; }
-  ol.ordered { color:#c00000; margin-left:18px; }
+  ol.ordered, ul.ordered { 
+    color:#c00000; 
+    margin-left:18px; 
+    list-style-type: none;
+    padding-left: 0;
+  }
 
   /* inputs row */
   .inputs {
@@ -80,6 +85,19 @@
   input[type="text"].wide{ width:220px; }
   input[type="text"].small{ width:120px; }
   input[type="password"]{ width:180px; }
+  input.filled-input {
+    background-color: #1a1aff;
+    color: black;
+    border: 1px solid #0000cc;
+    width: 180px;
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+  
+  input.filled-input::placeholder {
+    color: black;
+    opacity: 1;
+  }
 
   textarea { width:200px; height:34px; resize:none; }
 
@@ -107,45 +125,47 @@
 </head>
 <body>
 
-  <h1 id="h1-text" class="large">H1 text 1</h1>
-  <h1 id="h1-text-2" class="small">H1 text 2</h1>
+  <div class="python">
+    <h1 id="h1-text" class="large">H1 text 1</h1>
+    <h1 id="h1-text-2" class="small">H1 text 2</h1>
 
-  <h2 class="h2-text red">H2 text</h2>
-  <h6 class="h2-text h6-text">H6 text</h6>
+    <h2 class="h2-text red">H2 text</h2>
+    <h6 class="h2-text h6-text">H6 text</h6>
 
-  <p class="lead">
-    Native mobile emulation of Google Chrome for Android and
-    <span style="color: green">Mobile Safari</span>. The same rendering engine works on your Desktop and in the Cloud.
-  </p>
+    <p class="lead">
+      Native mobile emulation of Google Chrome for Android and
+      <span style="color: green">Mobile Safari</span>. The same rendering engine works on your Desktop and in the Cloud.
+    </p>
 
-  <img src="https://playwright.dev/img/logos/Browsers.png" width="250" alt="browsers.png" style="width: 250px"/>
-  <p></p>
-  <a class="green-link" href="https://playwright.dev/python/" target="_blank">Python</a>
+    <img src="https://playwright.dev/img/logos/Browsers.png" width="250" alt="browsers.png" style="width: 250px"/>
+    <p></p>
+    <a class="green-link" href="https://playwright.dev/python/" target="_blank">Python</a>
 
-  <ul class="custom">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-  </ul>
+    <ul class="custom">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
 
-  <ul class="redbullets">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-  </ul>
+    <ul class="redbullets">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
 
-  <ol class="ordered">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-  </ol>
+    <ol class="ordered">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ol>
+  </div>
 
   <div class="inputs">
-    <!-- blue filled bar -->
-    <div class="bar" title="progress"><i></i></div>
+    <!-- text input with value 12345 -->
+    <input type="text" value="12345" placeholder="12345" class="filled-input" />
 
     <!-- email -->
-    <input class="wide" type="text" placeholder="Email" />
+    <input class="wide" type="text" placeholder="email" />
 
     <!-- password -->
     <input type="password" placeholder="Password" />
@@ -179,9 +199,20 @@
     </div>
   </div>
 
+  <div class="java-script">
+    <ul class="ordered">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <h2>H2 text</h2>
+    <a class="green-link" href="https://playwright.dev/javascript/" target="_blank">JavaScript</a>
+  </div>
+
   <footer>
     <p>1</p>
-
   </footer>
 
 </body>

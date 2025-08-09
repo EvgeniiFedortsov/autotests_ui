@@ -1,10 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Макет HTML-страницы с различными элементами интерфейса" />
+<title>Mockup — HTML from image</title>
+<style>
+  body{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 30px;
+    color:#111;
+  }
+
+  /* Заголовки */
+  h1.large {
+    font-size:48px; margin: 0 0 10px 0;
+  }
+  h1.small {
+    font-size:28px; margin: 10px 0 12px 0;
+  }
+  h2.red {
+    color: #c00000;
+    font-weight:700;
+    margin: 6px 0 10px 0;
+  }
+  h6.yellow {
+    color:#f6e24a;
+    font-weight:700;
+    margin:6px 0 14px 0;
+  }
+
+  p.lead{
+    max-width:900px;
+    line-height:1.4;
+  }
+
+  a.green{ color: #0a8b3d; text-decoration: none; font-weight:600; }
+
+  /* row of browser icons */
+  .browsers{
+    margin:14px 0;
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .browser {
+    width:42px;height:42px;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    box-shadow:0 0 0 2px rgba(0,0,0,0.05) inset;
+  }
+  .chrome{ background: radial-gradient(circle at 40% 30%, #fff 0 6px, transparent 7px), linear-gradient(45deg,#fbbc05,#ff5f00);}
+  .edge{ background: linear-gradient(45deg,#0fb0ff,#0250a0); }
+  .firefox{ background: linear-gradient(45deg,#ff7a00,#ff2f7a); }
+  .safari{ background: linear-gradient(45deg,#8fd3f4,#4a90e2); }
+
+  /* links and lists */
+  .green-link { color:#0a8b3d; font-weight:700; margin-bottom:6px; display:inline-block; }
+  ul.custom {
+    color: #0a8b3d;
+    margin: 8px 0 8px 18px;
+  }
+  ul.custom li { color: #0a8b3d; }
+  ul.redbullets { color:#c00000; margin-left:18px; }
+  ol.ordered { color:#c00000; margin-left:18px; }
+
+  /* inputs row */
+  .inputs {
+    margin-top:18px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  input[type="text"], input[type="password"], textarea {
+    border:1px solid #ccc;
+    padding:6px 8px;
+    font-size:14px;
+  }
+  input[type="text"].wide{ width:220px; }
+  input[type="text"].small{ width:120px; }
+  input[type="password"]{ width:180px; }
+
+  textarea { width:200px; height:34px; resize:none; }
+
+  /* blue filled bar (simulating progress) */
+  .bar {
+    width:140px; height:18px; background:#eee; border:1px solid #999; display:inline-block;
+    position:relative; vertical-align:middle;
+  }
+  .bar > i { display:block; height:100%; width:70%; background:#0033cc; }
+
+  /* table-like rows */
+  .grid {
+    margin-top:10px;
+    display:block;
+  }
+  .grid .row { display:flex; gap:10px; align-items:center; margin:4px 0; }
+  .grid .cell { padding:4px 8px; background:#f2f2f2; border:1px solid #ddd; }
+
+  /* footer */
+  footer { margin-top:18px; color:#222; }
+
+  /* small debug-like list */
+  .inline-list { font-size:13px; color:#333; margin-top:8px; }
+</style>
 </head>
 <body>
-$END$
+
+  <h1 id="h1-text" class="large">H1 text 1</h1>
+  <h1 id="h1-text-2" class="small">H1 text 2</h1>
+
+  <h2 class="h2-text red">H2 text</h2>
+  <h6 class="h2-text h6-text">H6 text</h6>
+
+  <p class="lead">
+    Native mobile emulation of Google Chrome for Android and
+    <span style="color: green">Mobile Safari</span>. The same rendering engine works on your Desktop and in the Cloud.
+  </p>
+
+  <img src="https://playwright.dev/img/logos/Browsers.png" width="250" alt="browsers.png" style="width: 250px"/>
+  <p></p>
+  <a class="green-link" href="https://playwright.dev/python/" target="_blank">Python</a>
+
+  <ul class="custom">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <ul class="redbullets">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <ol class="ordered">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ol>
+
+  <div class="inputs">
+    <!-- blue filled bar -->
+    <div class="bar" title="progress"><i></i></div>
+
+    <!-- email -->
+    <input class="wide" type="text" placeholder="Email" />
+
+    <!-- password -->
+    <input type="password" placeholder="Password" />
+
+    <!-- textarea with value 12345 -->
+    <textarea name="msg">12345</textarea>
+
+    <!-- small text input and button -->
+    <input class="small" type="text" placeholder="Text" />
+    <button type="button">Text</button>
+  </div>
+
+  <!-- simple grid / rows -->
+  <div class="grid">
+    <div class="row">
+      <div class="cell">Item 1</div>
+      <div class="cell">Item 2</div>
+      <div class="cell">Item 3</div>
+    </div>
+
+    <div class="row">
+      <div class="cell">Row 1</div>
+      <div class="cell">Row 2</div>
+      <div class="cell">Row 3</div>
+    </div>
+
+    <div class="row">
+      <div class="cell">Row 1</div>
+      <div class="cell">Row 2</div>
+      <div class="cell">Row 3</div>
+    </div>
+  </div>
+
+  <footer>
+    <p>1</p>
+
+  </footer>
+
 </body>
 </html>

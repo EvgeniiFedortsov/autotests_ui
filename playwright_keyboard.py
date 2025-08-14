@@ -17,8 +17,8 @@ with sync_playwright() as playwright:
     # По символу имитируем нажатия клавиш для ввода текста
     for character in 'user@gmail.com':
         # Добавляем задержку 300 мс для имитации реального ввода
-        page.keyboard.press(character, delay=300)
-
+        # page.keyboard.press(character, delay=300)
+        page.keyboard.type(character, delay=300)
     # Выделяем весь текст в поле Email с помощью комбинации клавиш Ctrl+A
     page.keyboard.press("ControlOrMeta+A")
 

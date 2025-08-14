@@ -10,6 +10,7 @@ with sync_playwright() as playwright:
 
     # Находим ссылку Registration
     registration_link = page.get_by_test_id('login-page-registration-link')
+
     # Выполняем наведение курсора на ссылку
     registration_link.hover()
 
